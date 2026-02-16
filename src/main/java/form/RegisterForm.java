@@ -1,0 +1,20 @@
+package form;
+// DTO 같은 개념
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class RegisterForm {
+	
+	@NotBlank
+	private String loginId;
+	
+	@NotBlank
+	private String password;
+	
+	@NotBlank
+	private String name;
+	
+	@NotBlank
+	private String email;
+}

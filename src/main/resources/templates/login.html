@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+</head>
+<body>
+<form id="loginForm" action="/login" method="post">
+    <div id="loginError" style="color: red">
+        <div th:if="${param.error != null and param.error[0] eq 'true'}">
+            비밀번호가 맞지 않습니다. <br>
+        </div>
+	</div>
+    <div id="emptyError" style="color: red"></div>
+
+    <input type="text" id="username" name="username" placeholder="아이디" autofocus> <br>
+    <input type="password" id="password" name="password" placeholder="비밀번호">
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}"/> <br>
+    <button type="submit">로그인</button>
+    <a href="/boards">뒤로 가기</a>
+</form>
+</body>
+</html>
